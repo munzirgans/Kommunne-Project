@@ -1,0 +1,62 @@
+{{define "header"}}
+<header>
+    <div class="header-area ">
+        <div id="sticky-header" class="main-header-area">
+            <div class="container-fluid">
+                <div class="row align-items-center">
+                    <div class="col-xl-3 col-lg-2">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="/static/img/logo.png" alt="">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-xl-6 col-lg-7">
+                        <div class="main-menu  d-none d-lg-block">
+                            <nav>
+                                <ul id="navigation">
+                                    <li><a class="active" href="/">home</a></li>
+                                    <li><a href="#">Student <i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                            <li><a href="">How It Work</a></li>
+                                            <li><a href="">FAQ</a></li>
+                                            <li><a href="/apply-student">Apply</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Investor<i class="ti-angle-down"></i></a>
+                                        <ul class="submenu">
+                                             <li><a href="/marketplace">Marketplace</a></li>
+                                             <li><a href="/apply-investor">Invest</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="contact.html">Our Company</a></li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    {{if .login}}
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a  href="#">Account</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{else}}
+                        <div class="col-xl-3 col-lg-3 d-none d-lg-block">
+                            <div class="Appointment">
+                                <div class="book_btn d-none d-lg-block">
+                                    <a  href="/signin">Login</a>
+                                </div>
+                            </div>
+                        </div>
+                    {{end}}
+                    <div class="col-12">
+                        <div class="mobile_menu d-block d-lg-none"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+{{end}}

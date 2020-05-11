@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Student Form</title>
+
+    <!-- Font Icon -->
+    <link rel="stylesheet" href="/static/fonts/material-icon/css/material-design-iconic-font.min.css">
+    <link rel="stylesheet" href="/static/js/vendor/nouislider/nouislider.min.css">
+
+    <!-- Main css -->
+    <link rel="stylesheet" href="/static/css/formstyle.css">
+</head>
+<body>
+
+    <div class="main">
+
+        <div class="container">
+            <div class="signup-content">
+                <div class="signup-form">
+                    <form method="POST" class="register-form" id="register-form">
+                        <div class="form-row">
+                            <div class="form-group">
+								<div class="form-radio">
+                                    <div class="label-flex">
+                                        <label for="payment" class="required">Gender</label>
+                                    </div>
+                                    <div class="form-radio-group">            
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cash" checked>
+                                            <label for="cash">Male</label>
+                                            <span class="check"></span>
+                                        </div>
+                                        <div class="form-radio-item">
+                                            <input type="radio" name="payment" id="cheque">
+                                            <label for="cheque">Female</label>
+                                            <span class="check"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="first_name" class="required">Date of Birth</label>
+                                    <input type="text" name="first_name" id="first_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="last_name" class="required">Address</label>
+                                    <input type="text" name="last_name" id="last_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">Phone Number</label>
+                                    <input type="text" name="company" id="company" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="company" class="required">LinkedIn</label>
+                                    <input type="text" name="company" id="company" />
+                                </div>
+                            </div>
+							
+                            <div class="form-group">    
+                                <div class="form-input">
+                                    <label for="email" class="required">university</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="email" class="required">Major</label>
+                                    <input type="text" name="email" id="email" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="phone_number" class="required">Degree</label>
+                                    <input type="text" name="phone_number" id="phone_number" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Estimated Graduation</label>
+                                    <input type="text" name="chequeno" id="chequeno" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="blank_name" class="required">GPA</label>
+                                    <input type="text" name="blank_name" id="blank_name" />
+                                </div>
+                                <div class="form-input">
+                                    <label for="payable" class="required">Total Credits</label>
+                                    <input type="text" name="payable" id="payable" />
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Amount scholarship you got</label>
+                                    <input type="text" name="chequeno" id="chequeno" />
+                                </div>            
+                                <div class="form-select">
+                                    <div class="label-flex">
+                                        <label for="meal_preference" class="required">How urgently do you require funding</label>
+                                    </div>
+                                    <div class="select-list">
+                                        <select name="meal_preference" id="meal_preference">
+                                            <option value="Vegetarian">Select One</option>
+                                            <option value="Kosher">Immediately</option>
+                                            <option value="Asian Vegetarian">Within a month</option>
+                                            <option value="Kosher">Within one to three months</option>
+                                            <option value="Asian Vegetarian">I'm not in a hurry</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Upload ID Card</label>
+                                    <input type="file" name="chequeno" id="chequeno" />
+                                </div> 
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Upload Student Card</label>
+                                    <input type="file" name="chequeno" id="chequeno" />
+                                </div> 
+                                <div class="form-input">
+                                    <label for="chequeno" class="required">Upload Transcript</label>
+                                    <input type="file" name="chequeno" id="chequeno" />
+                                </div> 
+                            </div>
+                        </div>
+
+                        <div class="donate-us">
+                            <label>How Much Financing Do You Need (in 000)</label>
+                            <div class="price_slider ui-slider ui-slider-horizontal">
+                                <div id="slider-margin"></div>
+                                <span class="donate-value" id="value-lower"></span>
+                            </div>
+                        </div>
+                        <div class="form-submit">
+                            <input type="submit" value="Apply for Funding" class="submit" id="submit" name="submit" />
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- JS -->
+    <script src="/static/js/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/js/vendor/nouislider/nouislider.min.js"></script>
+    <script src="/static/js/vendor/wnumb/wNumb.js"></script>
+    <script src="/static/js/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
+    <script src="/static/js/vendor/jquery-validation/dist/additional-methods.min.js"></script>
+    <script src="/static/js/formmain.js"></script>
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+</html>
