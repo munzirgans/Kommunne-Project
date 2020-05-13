@@ -16,12 +16,12 @@ var Store = sessions.NewCookieStore([]byte("MunzirStuds"))
 func SigninController(w http.ResponseWriter, r *http.Request) {
 	var passDB string
 	var username string
-	email := r.FormValue("your_email")
-	password := r.FormValue("your_pass")
-	errs := config.DB.QueryRow("select password,name from user where email=?", email).Scan(&passDB, &username)
 	data := map[string]interface{}{
 		"err": "Invalid username or password",
 	}
+	email := r.FormValue("your_email")
+	password := r.FormValue("your_pass")
+	errs := config.DB.QueryRow("select password,name from user where email=?", email).Scan(&passDB, &username)
 	if errs != nil {
 		tmp, err := template.ParseFiles("views/signin.html")
 		if err != nil {

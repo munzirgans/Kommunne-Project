@@ -23,18 +23,30 @@
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form" action="/signup">
+                            {{if .username}}
+                                    <p>Name must be a letter and not have a symbol or digit</p>
+                            {{end}}
                             <div class="form-group">
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>
                             </div>
+                            {{if .email}}
+                                    <p>An invalid e-mail address</p>
+                                {{end}}
                             <div class="form-group">
                                 <label for="email"><i class="zmdi zmdi-email"></i></label>
                                 <input type="email" name="email" id="email" placeholder="Your Email"/>
                             </div>
+                            {{if .password}}
+                                <p>Password must contain lower and upper case, at least one number and at least 8 character long</p>
+                            {{end}}
                             <div class="form-group">
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="pass" id="pass" placeholder="Password"/>
                             </div>
+                            {{if .confirmpass}}
+                                <p>Password do not same</p>
+                            {{end}}
                             <div class="form-group">
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
