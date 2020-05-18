@@ -14,7 +14,7 @@
 </head>
 <body>
 
-    <div class="main">
+    <div class="main" style="padding: 125px 0;">
 
         <!-- Sing in  Form -->
         <section class="sign-in">
@@ -50,7 +50,9 @@
                             <ul class="socials">
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
                                 <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
-                                <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                                <form action="/googlesignin" method="POST">
+                                    <li><a href="{{.google}}"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                                </form>
                             </ul>
                         </div>
                     </div>

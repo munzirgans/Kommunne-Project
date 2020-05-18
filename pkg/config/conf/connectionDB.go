@@ -19,6 +19,9 @@ func ConnectionDB() string {
 	}
 	defer f.Close()
 	content, err := ioutil.ReadAll(f)
+	if err != nil {
+		fmt.Println(err)
+	}
 	toml.Unmarshal(content, &config)
 	connURL := fmt.Sprintf("%s:%s@tcp(%s:%s)/%s", config.Database.User, config.Database.Password, config.Database.Host, config.Database.Port, config.Database.Name)
 	return connURL

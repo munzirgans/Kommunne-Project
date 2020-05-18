@@ -16,3 +16,10 @@ func DBConnect(conn string) *sql.DB {
 	}
 	return db
 }
+
+// [database]
+// host = "us-cdbr-east-06.cleardb.net"
+// port = "3306"
+// user = "b2f07d608a35af"
+// password = "f94be289"
+// name = "heroku_73f670b93e27f80"

@@ -25,10 +25,14 @@ func SigninController(w http.ResponseWriter, r *http.Request) {
 	if errs != nil {
 		tmp, err := template.ParseFiles("views/signin.html")
 		if err != nil {
-			fmt.Println(err)
+			http.Error(w, err.Error(), http.StatusInternalServerError)
 			return
 		}
-		tmp.Execute(w, data)
+		err = tmp.Execute(w, data)
+		if err != nil {
+			http.Error(w, err.Error(), http.StatusInternalServerError)
+			return
+		}
 		return
 	}
 	errs = bcrypt.CompareHashAndPassword([]byte(passDB), []byte(password))
@@ -38,19 +42,29 @@ func SigninController(w http.ResponseWriter, r *http.Request) {
 			fmt.Println(err)
 			return
 		}
-		tmp.Execute(w, data)
+		err = tmp.Execute(w, data)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
 		return
 	}
 	session, _ := Store.Get(r, "session")
 	session.Values["username"] = username
-	session.Save(r, w)
+	if err := session.Save(r, w); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	http.Redirect(w, r, "/", http.StatusSeeOther)
 }
 
 func DelSes(w http.ResponseWriter, r *http.Request) {
 	session, _ := Store.Get(r, "session")
 	session.Options.MaxAge = -1
-	session.Save(r, w)
+	if err := session.Save(r, w); err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 	http.Redirect(w, r, "/signin", http.StatusSeeOther)
 }
 
