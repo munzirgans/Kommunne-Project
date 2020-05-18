@@ -23,3 +23,10 @@ func DBConnect(conn string) *sql.DB {
 // user = "b2f07d608a35af"
 // password = "f94be289"
 // name = "heroku_73f670b93e27f80"
+
+// [database]
+// host = "localhost"
+// port = "3306"
+// user = "munzir"
+// password = "munzirdev"
+// name = "studs"

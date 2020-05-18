@@ -18,7 +18,7 @@ var GoogleAccountUrlRedirect string
 func SetGOauthConfig() *oauth2.Config {
 	clientID, clientSecret := conf.GoogleClient()
 	GOauthConfig := &oauth2.Config{
-		RedirectURL:  "http://localhost:1234/googlesign",
+		RedirectURL:  "http://kommunne.herokuapp.com/googlesign",
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
 		Scopes:       []string{"https://www.googleapis.com/auth/userinfo.email", "https://www.googleapis.com/auth/userinfo.profile"},
@@ -37,7 +37,7 @@ func GoogleSigninController(w http.ResponseWriter, r *http.Request) {
 	var json = jsoniter.ConfigCompatibleWithStandardLibrary
 	var multiplerow bool
 	if r.FormValue("state") != "studsstate" {
-		http.Error(w, "Invalid State !", http.StatusInternalServerError)
+		http.Redirect(w, r, "/", http.StatusSeeOther)
 		return
 	}
 	token, err := GoogleOauthConfig.Exchange(oauth2.NoContext, r.FormValue("code"))
