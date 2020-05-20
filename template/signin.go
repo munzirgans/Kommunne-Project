@@ -12,7 +12,8 @@ func SigninTemplate(w http.ResponseWriter, r *http.Request) {
 	filepath := path.Join("views", "signin.html")
 	tmpl, err := template.ParseFiles(filepath)
 	data := map[string]interface{}{
-		"google": controller.GoogleAccountUrlRedirect,
+		"google":   controller.GoogleAccountUrlRedirect,
+		"facebook": controller.FacebookAccountUrlRedirect,
 	}
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)

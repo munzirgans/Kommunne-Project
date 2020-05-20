@@ -13,10 +13,19 @@ type Tomlconf struct {
 		ClientID     string `toml:"clientID"`
 		ClientSecret string `toml:"clientSecret"`
 	}
+	FacebookLogin struct {
+		ClientID     string `toml:"clientID"`
+		ClientSecret string `toml:"clientSecret"`
+	}
 }
 
 type GoogleProfile struct {
 	Email   string `json:"email"`
 	Name    string `json:"name"`
 	Picture string `json:"picture"`
+}
+
+type FacebookProfile struct {
+	Email string `json:"email"`
+	Name  string `json:"name"`
 }

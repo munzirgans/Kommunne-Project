@@ -5,7 +5,10 @@ user = "b2f07d608a35af"
 password = "f94be289"
 name = "heroku_73f670b93e27f80"
 
-
 [googleLogin]
 clientID = "414470856146-tjhu1r3krc1tf3pfdduf4hdteuo32d1u.apps.googleusercontent.com"
 clientSecret = "9IhRhPCmTZo8JvgnWXtuDBGv"
+
+[facebookLogin]
+clientID = "245829490193282"
+clientSecret = "91f5ad7d465b349b6c413ae8ee517294"
