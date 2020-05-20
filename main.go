@@ -37,7 +37,7 @@ func main() {
 	r.HandleFunc("/delses", controller.DelSes).Methods("GET")
 	r.HandleFunc("/apply-investor", render.ApplyinvestorTemplate).Methods("GET")
 	r.HandleFunc("/testemp", render.TesTemplate).Methods("GET")
-	r.HandleFunc("/instagram", render.InstagramSigninTemplate).Methods("GET")
+	// r.HandleFunc("/instagram", render.InstagramSigninTemplate).Methods("GET")
 	// fmt.Println("Connected to port 1234")
 	// log.Fatal(http.ListenAndServe(":1234", r))
 	fmt.Println("Connected to port " + os.Getenv("PORT"))
