@@ -22,7 +22,7 @@ func SetFOauthConfig() *oauth2.Config {
 		RedirectURL:  "https://kommunne.herokuapp.com/facebooksign",
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
-		Scopes:       []string{"email", "public_profile", "user_photos"},
+		Scopes:       []string{"email", "public_profile"},
 		Endpoint:     facebook.Endpoint,
 	}
 	return foauthconfig
@@ -57,6 +57,7 @@ func FacebookSigninController(w http.ResponseWriter, r *http.Request) {
 		fmt.Println(err)
 		return
 	}
+	fmt.Println(string(content))
 	_ = config.DB.QueryRow("select if(count(*) > 0, 'true','false') from user where email = ?", fprof.Email).Scan(&multiplerow)
 	if multiplerow {
 		session, _ := Store.Get(r, "session")
