@@ -5,10 +5,7 @@ import (
 	"Studs/pkg/config"
 	"Studs/pkg/config/conf"
 	render "Studs/template"
-	"fmt"
-	"log"
 	"net/http"
-	"os"
 
 	"github.com/gorilla/mux"
 )
@@ -28,7 +25,7 @@ func main() {
 	r.HandleFunc("/signin", controller.SigninController).Methods("POST")
 	r.HandleFunc("/signup", controller.SignupController).Methods("POST")
 	r.HandleFunc("/googlesign", controller.GoogleSigninController).Methods("GET")
-	r.HandleFunc("/facebooksign", controller.FacebookSigninController).Methods("GET")
+	r.HandleFunc("/facebooksign?type=access", controller.FacebookSigninController).Methods("GET")
 	r.HandleFunc("/iglogin", controller.InstagramController).Methods("POST")
 	// GET HANDLER
 	r.HandleFunc("/signin", render.SigninTemplate).Methods("GET")
@@ -44,6 +41,6 @@ func main() {
 	// r.HandleFunc("/instagram", render.InstagramSigninTemplate).Methods("GET")
 	// fmt.Println("Connected to port 1234")
 	// log.Fatal(http.ListenAndServe(":1234", r))
-	fmt.Println("Connected to port " + os.Getenv("PORT"))
-	log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), r))
+	// fmt.Println("Connected to port " + os.Getenv("PORT"))
+	// log.Fatal(http.ListenAndServe(":"+os.Getenv("PORT"), r))
 }
