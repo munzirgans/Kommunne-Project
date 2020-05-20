@@ -28,8 +28,8 @@ func main() {
 	r.HandleFunc("/signin", controller.SigninController).Methods("POST")
 	r.HandleFunc("/signup", controller.SignupController).Methods("POST")
 	r.HandleFunc("/googlesign", controller.GoogleSigninController).Methods("GET")
-	r.HandleFunc("/facebooksign?type=access", controller.FacebookSigninController).Methods("GET")
-	r.HandleFunc("/iglogin", controller.InstagramController).Methods("POST")
+	r.HandleFunc("/facebooksign", controller.FacebookSigninController).Methods("GET")
+	// r.HandleFunc("/iglogin", controller.InstagramController).Methods("POST")
 	// GET HANDLER
 	r.HandleFunc("/signin", render.SigninTemplate).Methods("GET")
 	r.HandleFunc("/signup", render.SignupTemplate).Methods("GET")
