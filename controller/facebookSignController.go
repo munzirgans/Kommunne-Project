@@ -19,7 +19,7 @@ var FacebookAccountUrlRedirect string
 func SetFOauthConfig() *oauth2.Config {
 	clientID, clientSecret := conf.FacebookClient()
 	foauthconfig := &oauth2.Config{
-		RedirectURL:  "http://kommunne.herokuapp.com/facebooksign",
+		RedirectURL:  "https://kommunne.herokuapp.com/facebooksign",
 		ClientID:     clientID,
 		ClientSecret: clientSecret,
 		Scopes:       []string{"email", "public_profile", "user_photos"},
