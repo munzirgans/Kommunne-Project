@@ -4,11 +4,10 @@ port = "3306"
 user = "b2f07d608a35af"
 password = "f94be289"
 name = "heroku_73f670b93e27f80"
-
 [googleLogin]
 clientID = "414470856146-tjhu1r3krc1tf3pfdduf4hdteuo32d1u.apps.googleusercontent.com"
 clientSecret = "9IhRhPCmTZo8JvgnWXtuDBGv"
 
 [facebookLogin]
-clientID = "580248839267231"
-clientSecret = "5c7a9212175e96510f0b4cc7e3c21f6b"
+clientID = "738839170188587"
+clientSecret = "7f5d5112989b28e191818b6393946aa4"
