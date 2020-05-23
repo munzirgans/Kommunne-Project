@@ -27,10 +27,10 @@ func main() {
 	// POST HANDLER
 	r.HandleFunc("/signin", controller.SigninController).Methods("POST")
 	r.HandleFunc("/signup", controller.SignupController).Methods("POST")
+	r.HandleFunc("/apply-investor", controller.ApplyInvestorController).Methods("POST")
+	// GET HANDLER
 	r.HandleFunc("/googlesign", controller.GoogleSigninController).Methods("GET")
 	r.HandleFunc("/facebooksign", controller.FacebookSigninController).Methods("GET")
-	// r.HandleFunc("/iglogin", controller.InstagramController).Methods("POST")
-	// GET HANDLER
 	r.HandleFunc("/signin", render.SigninTemplate).Methods("GET")
 	r.HandleFunc("/signup", render.SignupTemplate).Methods("GET")
 	r.HandleFunc("/", render.IndexTemplate).Methods("GET")
