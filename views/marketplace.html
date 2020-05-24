@@ -31,118 +31,22 @@
                                 <div class="visit">LinkedIn</div>
                                 <div class="visit">Invest</div>
                             </div>
+                            {{range $index, $elem := .items}}
                             <div class="table-row">
-                                <div class="serial">01</div>
-                                <div class="country">A</div>
-                                <div class="country">UI</div>
-                                <div class="visit">15%</div>
+                                <div class="serial">{{add $index 1}}</div>
+                                <div class="country">{{$elem.Name}}</div>
+                                <div class="country">{{$elem.School}}</div>
+                                <div class="visit">{{percentage $elem.Goal}}%</div>
                                 <div class="percentage">
                                     <div class="progress">
-                                        <div class="progress-bar color-1" role="progressbar" style="width: 80%"
-                                            aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                                        <div class="progress-bar color-{{add $index 1}}" role="progressbar" style="width: {{percentage $elem.Goal}}%"
+                                            aria-valuenow="{{percentage $elem.Goal}}" aria-valuemin="0" aria-valuemax="100"></div>
                                     </div>
                                 </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
+                                <a href="https://id.linkedin.com/in/{{$elem.Linkedin}}" class="genric-btn link circle">Link</a>
                                 <a href="#" class="genric-btn info circle">Invest</a>
                             </div>
-                            <div class="table-row">
-                                <div class="serial">02</div>
-                                <div class="country">B</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-2" role="progressbar" style="width: 30%"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">03</div>
-                                <div class="country">C</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-3" role="progressbar" style="width: 55%"
-                                            aria-valuenow="55" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">04</div>
-                                <div class="country">D</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-4" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">05</div>
-                                <div class="country">E</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-5" role="progressbar" style="width: 40%"
-                                            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">06</div>
-                                <div class="country">F</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-6" role="progressbar" style="width: 70%"
-                                            aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">07</div>
-                                <div class="country">G</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-7" role="progressbar" style="width: 30%"
-                                            aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
-                            <div class="table-row">
-                                <div class="serial">08</div>
-                                <div class="country">H</div>
-                                <div class="country">UI</div>
-                                <div class="visit">12%</div>
-                                <div class="percentage">
-                                    <div class="progress">
-                                        <div class="progress-bar color-8" role="progressbar" style="width: 60%"
-                                            aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                </div>
-                                <a href="#" class="genric-btn link circle">Link</a>
-                                <a href="#" class="genric-btn info circle">Invest</a>
-                            </div>
+                            {{end}}
                         </div>
                     </div>
                 </div>

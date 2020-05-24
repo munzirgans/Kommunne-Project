@@ -28,6 +28,7 @@ func main() {
 	r.HandleFunc("/signin", controller.SigninController).Methods("POST")
 	r.HandleFunc("/signup", controller.SignupController).Methods("POST")
 	r.HandleFunc("/apply-investor", controller.ApplyInvestorController).Methods("POST")
+	r.HandleFunc("/apply-student", controller.ApplyStudentController).Methods("POST")
 	// GET HANDLER
 	r.HandleFunc("/googlesign", controller.GoogleSigninController).Methods("GET")
 	r.HandleFunc("/facebooksign", controller.FacebookSigninController).Methods("GET")
@@ -41,7 +42,6 @@ func main() {
 	r.HandleFunc("/delses", controller.DelSes).Methods("GET")
 	r.HandleFunc("/apply-investor", render.ApplyinvestorTemplate).Methods("GET")
 	r.HandleFunc("/testemp", render.TesTemplate).Methods("GET")
-	// r.HandleFunc("/instagram", render.InstagramSigninTemplate).Methods("GET")
 	// fmt.Println("Connected to port 1234")
 	// log.Fatal(http.ListenAndServe(":1234", r))
 	fmt.Println("Connected to port " + os.Getenv("PORT"))

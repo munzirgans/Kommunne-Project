@@ -54,14 +54,14 @@
                                 </div>
                                 <div class="form-input">
                                     <label for="company" class="required">LinkedIn</label>
-                                    <input type="text" name="company" id="company" />
+                                    <input type="text" name="linkedin" id="company" />
                                 </div>
                             </div>
 							
                             <div class="form-group">    
                                 <div class="form-input">
                                     <label for="email" class="required">university</label>
-                                    <input type="text" name="email" id="email" />
+                                    <input type="text" name="school" id="email" />
                                 </div>
                                 <div class="form-input">
                                     <label for="email" class="required">Major</label>
@@ -143,5 +143,11 @@
     <script src="/static/js/vendor/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="/static/js/vendor/jquery-validation/dist/additional-methods.min.js"></script>
     <script src="/static/js/formmain.js"></script>
+    <script type="text/javascript">
+        $('.register-form').on("submit",function(){
+            var goal = $('.noUi-tooltip').text().substring(2).replace(',','');
+            $(this).append('<input type="hidden" name="goal" value="'+goal+'"/>')
+        })
+    </script>
 </body><!-- This templates was made by Colorlib (https://colorlib.com) -->
 </html>
