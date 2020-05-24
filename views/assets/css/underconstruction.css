@@ -1,0 +1,29 @@
+.underconstruction{
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxnotif{
+    width: 700px;
+    height: 320px;
+    background-color:white;
+    border-radius: 10px;
+}
+
+.notiftxt{
+    margin: 60px 40px 63px 40px;
+    font-size:30px;
+    text-align: center;
+}
+
+.notifbtn{
+    margin-left:309px;
+    margin-right: 309px;
+}

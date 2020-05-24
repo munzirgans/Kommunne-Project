@@ -1,7 +1,18 @@
 {{define "index"}}
 <html class="no-js" lang="zxx">
+    <link rel="stylesheet" href="/static/css/underconstruction.css">
     {{template "head"}}
     <body>
+        <div class="underconstruction" id="underconstruction">
+            <div class="boxnotif">
+                <div class="notiftxt">We still on beta phase. We will contact you if we ready to operate</div>
+                <div class="notifbtn">
+                    <div class="about_btn" id="notifbtn">
+                        <div class="boxed-btn4">OK</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         {{template "header".}}
         <div class="slider_area">
             <div class="single_slider  d-flex align-items-center slider_bg_1">
@@ -139,9 +150,23 @@
                         </div>
                 </div>
             </div>
-        </div>
+        </div>    
         {{template "footer"}}
         {{template "script"}}
     </body>
+    <script>
+        $(document).ready(function(){
+            var underconstruction = $('.underconstruction');
+            underconstruction.addClass('wow fadeIn');
+            underconstruction.attr('data-wow-duration', '0.8s')
+            underconstruction.attr('data-wow-delay', '1s')
+            document.getElementById('underconstruction').style.visibility = "visible";
+        })
+        $('#notifbtn').click(function(){
+            $('.underconstruction').delay(0200).fadeOut("slow",function(){
+                $(this).remove();
+            })
+        })
+    </script>
 </html>
 {{end}}
