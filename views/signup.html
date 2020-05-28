@@ -12,6 +12,15 @@
     <!-- Main css -->
     <link rel="stylesheet" href="/static/css/signstyle.css">
 </head>
+<style>
+    .form-group{
+        margin-top:25px;
+        margin-bottom:0;
+    }
+    p{
+        margin-top: 5px;
+    }
+</style>
 <body>
 
     <div class="main" style="padding: 50px 0;">
@@ -22,34 +31,50 @@
                     <div class="signup-form">
                         <h2 class="form-title">Sign up</h2>
                         <form method="POST" class="register-form" id="register-form" action="/signup">
-                            {{if .username}}
-                                    <p>Name must be a letter and not have a symbol or digit</p>
-                            {{end}}
                             <div class="form-group">
+                            {{if .username}}
+                                <label for="name"><i class="zmdi zmdi-account material-icons-name" style="color:red;"></i></label>
+                                <input type="text" name="name" id="name" placeholder="Your Name" style="border-bottom:1px solid red"/>
+                            </div>
+                                <p style="color:red;">Name must be a letter and not have a symbol or digit</p>
+                            {{else}}
                                 <label for="name"><i class="zmdi zmdi-account material-icons-name"></i></label>
                                 <input type="text" name="name" id="name" placeholder="Your Name"/>
                             </div>
-                            {{if .email}}
-                                    <p>An invalid e-mail address</p>
-                                {{end}}
-                            <div class="form-group">
-                                <label for="email"><i class="zmdi zmdi-email"></i></label>
-                                <input type="email" name="email" id="email" placeholder="Your Email"/>
-                            </div>
-                            {{if .password}}
-                                <p>Password must contain lower and upper case, at least one number and at least 8 character long</p>
                             {{end}}
                             <div class="form-group">
+                            {{if .email}}
+                                <label for="email"><i class="zmdi zmdi-email" style="color:red"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email" style="border-bottom:1px solid red"/>
+                            </div>
+                                <p style="color:red;">An invalid e-mail address</p>
+                            {{else}}
+                                <label for="email"><i class="zmdi zmdi-email"></i></label>
+                                <input type="email" name="email" id="email" placeholder="Your Email"/> 
+                            </div>
+                            {{end}}
+                            <div class="form-group">
+                            {{if .password}}
+                                <label for="pass"><i class="zmdi zmdi-lock" style="color:red"></i></label>
+                                <input type="password" name="pass" id="pass" placeholder="Password" style="border-bottom:1px solid red"/>
+                            </div>
+                                <p style="color:red;">Password must contain lower and upper case, at least one number and at least 8 character long</p>
+                            {{else}}
                                 <label for="pass"><i class="zmdi zmdi-lock"></i></label>
                                 <input type="password" name="pass" id="pass" placeholder="Password"/>
                             </div>
-                            {{if .confirmpass}}
-                                <p>Password do not same</p>
                             {{end}}
                             <div class="form-group">
+                            {{if .confirmpass}}
+                                <label for="re-pass"><i class="zmdi zmdi-lock-outline" style="color:red"></i></label>
+                                <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" style="border-bottom:1px solid red"/>
+                            </div>
+                                <p style="color:red;">Password do not same</p>
+                            {{else}}
                                 <label for="re-pass"><i class="zmdi zmdi-lock-outline"></i></label>
                                 <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password"/>
                             </div>
+                            {{end}}
                             <div class="form-group">
                                 <input type="checkbox" name="agree-term" id="agree-term" class="agree-term" />
                                 <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>

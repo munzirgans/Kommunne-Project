@@ -1,0 +1,6 @@
+.dropdown-menu.show{
+    box-shadow:0 0 10px rgba(0, 0, 0, 0.02);
+    border: none;
+    width: 244px;
+    height: 100px;
+}

@@ -1,6 +1,7 @@
 {{define "index"}}
 <html class="no-js" lang="zxx">
     <link rel="stylesheet" href="/static/css/underconstruction.css">
+    <link rel="stylesheet" href="/static/css/index.css">
     {{template "head"}}
     <body>
         <div class="underconstruction" id="underconstruction">
@@ -24,8 +25,16 @@
                                     We will handle the expense</h3>
                                 <p class="wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">Finance college now. Payback when you have a job</p>
                                 <div class="video_service_btn wow fadeInLeft" data-wow-duration="1s" data-wow-delay=".1s">
-                                    <a href="/apply-student" class="boxed-btn3">Apply As Student</a>
-                                    <a href="/apply-student" class="boxed-btn3">Apply As Investor</a>
+                                    <div class="dropdown">
+                                        <button type="button" id="dropfunding" class="boxed-btn3 dropdown-toggle" data-toggle="dropdown">Apply For Funding</button>
+                                        <div class="dropdown-menu wow fadeIn" aria-labelledby="dropfunding">
+                                            <a href="/apply-student" class="dropdown-item" style="padding: .50rem 1.5rem;">Apply as Student</a>
+                                            <a href="/apply-investor" class="dropdown-item" style="padding: .50rem 1.5rem;">Apply as Investor</a>
+                                        </div>
+                                    </div>
+                                    <!-- <li><a class="boxed-btn3">Apply For Funding  <i class="ti-angle-down"></i></a> -->
+                                    <!-- <a href="/apply-student" class="boxed-btn3">Apply For Funding</a> -->
+                                    <!-- <a href="/apply-student" class="boxed-btn3">Apply As Investor</a> -->
                                 </div>
                             </div>
                         </div>

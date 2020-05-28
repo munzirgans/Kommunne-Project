@@ -29,13 +29,16 @@ func SignupController(w http.ResponseWriter, r *http.Request) {
 		if !nameValid(username) {
 			data["username"] = true
 			errmsg = true
-		} else if !reemail.MatchString(email) {
+		}
+		if !reemail.MatchString(email) {
 			data["email"] = true
 			errmsg = true
-		} else if !isValid(password) {
+		}
+		if !isValid(password) {
 			data["password"] = true
 			errmsg = true
-		} else if confpass != password {
+		}
+		if confpass != password {
 			data["confirmpass"] = true
 			errmsg = true
 		}
