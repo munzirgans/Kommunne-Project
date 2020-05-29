@@ -20,11 +20,13 @@ func SignupController(w http.ResponseWriter, r *http.Request) {
 			"email":       false,
 			"password":    false,
 			"confirmpass": false,
+			"agreeterm":   false,
 		}
 		username := r.FormValue("name")
 		email := r.FormValue("email")
 		password := r.FormValue("pass")
 		confpass := r.FormValue("re_pass")
+		agreeterm := r.FormValue("agree-term")
 		reemail := regexp.MustCompile("^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$")
 		if !nameValid(username) {
 			data["username"] = true
@@ -40,6 +42,10 @@ func SignupController(w http.ResponseWriter, r *http.Request) {
 		}
 		if confpass != password {
 			data["confirmpass"] = true
+			errmsg = true
+		}
+		if agreeterm != "on" {
+			data["agreeterm"] = true
 			errmsg = true
 		}
 		if errmsg {
